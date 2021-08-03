@@ -1,7 +1,7 @@
 # postcss-px-to-viewport
-[![NPM version](https://badge.fury.io/js/postcss-px-to-viewport.svg)](http://badge.fury.io/js/postcss-px-to-viewport)
+[![npm version](https://img.shields.io/npm/v/@our-patches/postcss-px-to-viewport.svg)](https://www.npmjs.com/package/@our-patches/postcss-px-to-viewport)
 
-English | [中文](README_CN.md) 
+English
 
 A plugin for [PostCSS](https://github.com/postcss/postcss) that generates viewport units (vw, vh, vmin, vmax) from pixel units.
 
@@ -22,7 +22,7 @@ If your project involves a fixed width, this script will help to convert pixels 
 }
 
 .class2 {
-  padding-top: 10px; /* px-to-viewport-ignore */
+  padding-top: 10px;
   /* px-to-viewport-ignore-next */
   padding-bottom: 10px;
   /* Any other comment */
@@ -74,11 +74,11 @@ If your project involves a fixed width, this script will help to convert pixels 
 ### Installation
 Add via npm
 ```
-$ npm install postcss-px-to-viewport --save-dev
+$ npm install @our-patches/postcss-px-to-viewport --save-dev
 ```
 or yarn
 ```
-$ yarn add -D postcss-px-to-viewport
+$ yarn add -D @our-patches/postcss-px-to-viewport
 ```
 
 ### Usage
@@ -139,7 +139,6 @@ Default Options:
 
 You can use special comments for ignore conversion of single lines:
 - `/* px-to-viewport-ignore-next */` — on a separate line, prevents conversion on the next line.
-- `/* px-to-viewport-ignore */` — after the property on the right, prevents conversion on the same line.
 
 Example:
 ```css
@@ -148,16 +147,14 @@ Example:
   /* px-to-viewport-ignore-next */
   width: 10px;
   padding: 10px;
-  height: 10px; /* px-to-viewport-ignore */
-  border: solid 2px #000; /* px-to-viewport-ignore */
+
 }
 
 /* example output: */
 .class {
   width: 10px;
   padding: 3.125vw;
-  height: 10px;
-  border: solid 2px #000;
+ 
 }
 ```
 
@@ -171,7 +168,7 @@ add to your `postcss.config.js`
 module.exports = {
   plugins: {
     // ...
-    'postcss-px-to-viewport': {
+    '@our-patches/postcss-px-to-viewport': {
       // options
     }
   }
@@ -184,7 +181,7 @@ add to your `gulpfile.js`:
 ```js
 var gulp = require('gulp');
 var postcss = require('gulp-postcss');
-var pxtoviewport = require('postcss-px-to-viewport');
+var pxtoviewport = require('@our-patches/postcss-px-to-viewport);
 
 gulp.task('css', function () {
 
